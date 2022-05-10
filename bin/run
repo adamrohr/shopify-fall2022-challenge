@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+set -x
+
+export FLASK_ENV=development
+export FLASK_APP=src
+
+flask run --host 0.0.0.0 --port 8000 >> logs/server.log 2>&1 &
