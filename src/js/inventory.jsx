@@ -34,7 +34,7 @@ class Inventory extends React.Component {
         const item = e.target[0].value == "" ? " " : e.target[0].value;
         const quantity = e.target[1].value == "" ? -1 : e.target[1].value;
 
-        fetch(`/api/v1/inventory/add/${item}/${quantity}`)
+        fetch(`/api/v1/inventory/add/${item}/${quantity}/`)
         .then((response) => {
             if(!response.ok) throw Error(response.statusText);
             return response.json();
@@ -72,7 +72,7 @@ class Inventory extends React.Component {
         const item = e.target[0].value == "" ? " " : e.target[0].value;
         const quantity = e.target[1].value == "" ? -1 : e.target[1].value;
 
-        fetch(`/api/v1/inventory/remove/${item}/${quantity}`)
+        fetch(`/api/v1/inventory/remove/${item}/${quantity}/`)
         .then((response) => {
             if(!response.ok) throw Error(response.statusText);
             return response.json();
